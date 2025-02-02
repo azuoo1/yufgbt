@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>استثمار USDT</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7fc;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #555;
+        }
+        .container {
+            max-width: 420px;
+            width: 100%;
+            margin: auto;
+            background: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .container:hover {
+            transform: translateY(-5px);
+        }
+        .top-bar {
+            background: #28a745;
+            color: white;
+            padding: 12px;
+            border-radius: 12px 12px 0 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .logo-container h1 {
+            margin-bottom: 20px;
+            color: #2e7d32;
+            font-size: 22px;
+        }
+        .logo-container img {
+            width: 80%; /* تم تكبير الصورة */
+            height: auto;
+            margin-top: 15px;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .rating {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #f39c12;
+        }
+        .language-select {
+            background: #007bff;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 15px;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+        .language-select:hover {
+            background: #0056b3;
+        }
+        .actions button {
+            width: 48%;
+            padding: 12px;
+            background: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            margin: 8px 0;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .actions button:hover {
+            background: #218838;
+            transform: scale(1.05);
+        }
+        footer nav button {
+            width: 19%;
+            padding: 12px;
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 8px;
+            display: inline-block;
+            margin: 6px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        footer nav button:hover {
+            background: #0056b3;
+            transform: scale(1.05);
+        }
+        select {
+            padding: 8px;
+            margin-top: 20px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            background: #f9f9f9;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+        select:focus {
+            outline: none;
+            border-color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="top-bar">
+                <p id="top-bar-text">عائلتها، إذا ساعدتنا في إكمال الطلبات الـ...</p>
+                <select id="language-selector" onchange="changeLanguage()">
+                    <option value="ar">عربي</option>
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="fa">فارسی</option>
+                    <option value="fr">Français</option>
+                </select>
+            </div>
+            <div class="logo-container">
+                <h1 id="main-title">استثمر أموالك & وفر وقتك</h1>
+                <img src="https://www.aljazeera.net/wp-content/uploads/2022/03/shutterstock_1879675894.jpg?resize=770,513&quality=80" alt="شعار الموقع">
+            </div>
+            <div class="rating" id="rating">⭐⭐⭐⭐⭐ 5.0</div>
+        </header>
+        
+        <main>
+            <div class="actions">
+                <button class="withdraw" id="withdraw">⬅️ ينسحب</button>
+                <button class="company-file" id="company-file">🏢 ملف الشركة</button>
+            </div>
+        </main>
+        
+        <footer>
+            <nav>
+                <button id="home-button">🏠 بيت</button>
+                <button id="task-button">📋 مهمة</button>
+                <button id="team-button">👥 فريق</button>
+                <button onclick="window.location.href='fff.html'">⭐ كبار الشخصيات</button>
+                <button id="settings-button">⚙️ أنا</button>
+            </nav>
+        </footer>
+    </div>
+    
+    <script>
+        function changeLanguage() {
+            const lang = document.getElementById('language-selector').value;
+            
+            const texts = {
+                ar: {
+                    "top-bar-text": "عائلتها، إذا ساعدتنا في إكمال الطلبات الـ...",
+                    "main-title": "استثمر أموالك & وفر وقتك",
+                    "withdraw": "⬅️ ينسحب",
+                    "company-file": "🏢 ملف الشركة",
+                    "rating": "⭐⭐⭐⭐⭐ 5.0",
+                    "home-button": "🏠 بيت",
+                    "task-button": "📋 مهمة",
+                    "team-button": "👥 فريق",
+                    "vip-button": "⭐ كبار الشخصيات",
+                    "settings-button": "⚙️ أنا"
+                },
+                en: {
+                    "top-bar-text": "If you help us complete the tasks...",
+                    "main-title": "Invest Your Money & Save Your Time",
+                    "withdraw": "⬅️ Withdraw",
+                    "company-file": "🏢 Company File",
+                    "rating": "⭐⭐⭐⭐⭐ 5.0",
+                    "home-button": "🏠 Home",
+                    "task-button": "📋 Task",
+                    "team-button": "👥 Team",
+                    "vip-button": "⭐ VIP",
+                    "settings-button": "⚙️ Settings"
+                },
+                es: {
+                    "top-bar-text": "Si nos ayudas a completar las tareas...",
+                    "main-title": "Invierte Tu Dinero & Ahorra Tu Tiempo",
+                    "withdraw": "⬅️ Retirar",
+                    "company-file": "🏢 Archivo de la Compañía",
+                    "rating": "⭐⭐⭐⭐⭐ 5.0",
+                    "home-button": "🏠 Casa",
+                    "task-button": "📋 Tarea",
+                    "team-button": "👥 Equipo",
+                    "vip-button": "⭐ VIP",
+                    "settings-button": "⚙️ Configuración"
+                },
+                fa: {
+                    "top-bar-text": "اگر در تکمیل درخواست‌ها کمک کنید...",
+                    "main-title": "پول خود را سرمایه‌گذاری کنید & وقت خود را ذخیره کنید",
+                    "withdraw": "⬅️ برداشت",
+                    "company-file": "🏢 پرونده شرکت",
+                    "rating": "⭐⭐⭐⭐⭐ 5.0",
+                    "home-button": "🏠 خانه",
+                    "task-button": "📋 وظیفه",
+                    "team-button": "👥 تیم",
+                    "vip-button": "⭐ وی آی پی",
+                    "settings-button": "⚙️ تنظیمات"
+                },
+                fr: {
+                    "top-bar-text": "Si vous nous aidez à compléter les tâches...",
+                    "main-title": "Investissez Votre Argent & Économisez Votre Temps",
+                    "withdraw": "⬅️ Retirer",
+                    "company-file": "🏢 Dossier de la société",
+                    "rating": "⭐⭐⭐⭐⭐ 5.0",
+                    "home-button": "🏠 Maison",
+                    "task-button": "📋 Tâche",
+                    "team-button": "👥 Équipe",
+                    "vip-button": "⭐ VIP",
+                    "settings-button": "⚙️ Paramètres"
+                }
+            };
+
+            // Update all texts on the page based on selected language
+            document.getElementById('top-bar-text').innerText = texts[lang]["top-bar-text"];
+            document.getElementById('main-title').innerText = texts[lang]["main-title"];
+            document.getElementById('withdraw').innerText = texts[lang]["withdraw"];
+            document.getElementById('company-file').innerText = texts[lang]["company-file"];
+            document.getElementById('rating').innerText = texts[lang]["rating"];
+            document.getElementById('home-button').innerText = texts[lang]["home-button"];
+            document.getElementById('task-button').innerText = texts[lang]["task-button"];
+            document.getElementById('team-button').innerText = texts[lang]["team-button"];
+            document.getElementById('vip-button').innerText = texts[lang]["vip-button"];
+            document.getElementById('settings-button').innerText = texts[lang]["settings-button"];
+        }
+    </script>
+</body>
+</html>
